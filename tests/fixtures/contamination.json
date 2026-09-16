@@ -1,0 +1,25 @@
+{
+  "eval_records": 1,
+  "fail_on": [
+    "EXACT",
+    "NEAR"
+  ],
+  "hits": [
+    {
+      "eval_id": "tests/fixtures/valid.jsonl:1",
+      "evidence": "one two three four five six seven eight nine ten eleven twelve thirteen",
+      "level": "EXACT",
+      "train_id": "tests/fixtures/train.jsonl:1",
+      "value": 1.0
+    },
+    {
+      "eval_id": "tests/fixtures/valid.jsonl:1",
+      "evidence": "eight nine ten eleven twelve",
+      "level": "NEAR",
+      "train_id": "tests/fixtures/train.jsonl:1",
+      "value": 1.0
+    }
+  ],
+  "ok": false,
+  "train_records": 2
+}
