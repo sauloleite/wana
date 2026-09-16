@@ -1,8 +1,7 @@
 # Publishing wana 0.1.0
 
 Packaging follows Wyra: Hatchling, a dynamic version in `wana/__init__.py`, a
-console script, a tested wheel/sdist artifact, and release-triggered Trusted
-Publishing. Creating files locally does not reserve the package name or publish it.
+console script, a tested wheel/sdist artifact, and Trusted Publishing on pushes to `main` (or published GitHub Releases). Creating files locally does not reserve the package name or publish it.
 
 ## One-time setup
 
@@ -30,14 +29,21 @@ and [attestation documentation](https://docs.pypi.org/attestations/producing-att
 ## Release
 
 1. Review the changes; run the development checks from README.
-2. Update the version and changelog, commit and push to the configured repository.
-3. Wait for all CI platforms to pass. Local validation alone does not verify that matrix.
-4. Publish a GitHub Release tagged `v0.1.0`, matching the package version.
+2. For new package contents, increment `__version__` in `wana/__init__.py` and
+   update the changelog. The first publication can use the existing `0.1.0`.
+3. Commit and push to `main`. No tag or GitHub Release is required.
+4. Wait for all CI platforms to pass. Local validation alone does not verify that matrix.
 5. The workflow tests, builds, checks metadata, smoke-tests the wheel and uploads
    the same distribution bytes to PyPI with OIDC and attestations.
 6. In a fresh environment, run `pip install wana==0.1.0` and `wana --version`.
 
-The publish job runs only on a published release. If publisher setup or name
-availability prevents upload, resolve that state before another release attempt.
-Do not overwrite an existing PyPI version. npm reservation and Node parity belong
+Pull requests only test and build; they never publish. Published GitHub Releases
+remain supported, with a tag matching the version (for example `v0.1.0`).
+Publication jobs are serialized and `skip-existing: true` skips files already on
+PyPI. A push with the same version does **not** update the installed package:
+increment the version to distribute changes.
+
+If publisher setup or name availability prevents upload, resolve that state
+before retrying. If the GitHub environment restricts deployment branches, allow
+`main` for this push-based flow. Do not overwrite an existing PyPI version. npm reservation and Node parity belong
 to the later Node phase and are not part of this Python release.

@@ -8,4 +8,5 @@
 - Support literal template removal, custom matcher injection and failure policy.
 - Add `wana check`, a Python API, JSON reports, terminal summary and chained manifests.
 - Add golden/property tests, strict type checks and cross-platform CI.
-- Prepare wheel/sdist publication with PyPI Trusted Publishing and attestations.
+- Publish wheel/sdist on pushes to main after CI, using Trusted Publishing and
+  attestations; serialize uploads and skip existing distribution files.
