@@ -5,6 +5,7 @@ import hashlib
 import json
 import sys
 from collections.abc import Sequence
+from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -37,14 +38,24 @@ def _parser() -> argparse.ArgumentParser:
     check.add_argument("train", nargs="+", type=Path)
     check.add_argument("--eval", dest="evaluation", action="append", required=True, type=Path)
     check.add_argument("-o", "--out-dir", type=Path, default=Path("wana-check"))
+    check.add_argument("--markdown", action="store_true")
+    check.add_argument("--semantic", action="store_true")
+    check.add_argument("--embedding-model")
+    check.add_argument("--tokenizer")
+    check.add_argument("--semantic-threshold", type=float, default=0.9)
     check.add_argument("--ngram", type=int, default=13)
     check.add_argument("--threshold", type=float, default=0.8)
     check.add_argument("--shingle", type=int, default=5)
     check.add_argument("--ignore-template", action="append", default=[], metavar="LITERAL_TEXT")
-    check.add_argument("--fail-on", nargs="*", choices=["EXACT", "NEAR"], default=["EXACT", "NEAR"])
+    check.add_argument(
+        "--fail-on", nargs="*", choices=["EXACT", "NEAR", "SEMANTIC"], default=["EXACT", "NEAR"]
+    )
     check.add_argument(
         "--parent", type=Path, help="Parent manifest (auto-detected beside first input)"
     )
+    from wana.cli.curation import add_commands
+
+    add_commands(commands)
     return parser
 
 
@@ -52,11 +63,31 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Return 0 for pass, 1 for contamination and 2 for invalid input or I/O."""
     args = _parser().parse_args(argv)
     try:
+        if args.command != "check":
+            from wana.cli.curation import execute
+
+            return execute(args)
+        if "SEMANTIC" in args.fail_on and not args.semantic:
+            raise ValueError("--fail-on SEMANTIC requires --semantic")
         ignored = tuple(args.ignore_template)
-        matchers = (
+        from wana.ports.matcher import Matcher
+
+        matchers: tuple[Matcher, ...] = (
             NgramMatcher(args.ngram, ignore_template=ignored),
             MinHashMatcher(args.threshold, shingle=args.shingle, ignore_template=ignored),
         )
+        if args.semantic:
+            from wana.adapters.embedding.onnx import OnnxEmbedder
+            from wana.adapters.matching.embedding import EmbeddingMatcher
+
+            if not args.embedding_model or not args.tokenizer:
+                raise ValueError("--semantic requires --embedding-model and --tokenizer")
+            matchers = (
+                *matchers,
+                EmbeddingMatcher(
+                    OnnxEmbedder(args.embedding_model, args.tokenizer), args.semantic_threshold
+                ),
+            )
         reader = JsonlReader()
         training = [tuple(reader.read(str(path))) for path in args.train]
         testing = [tuple(reader.read(str(path))) for path in args.evaluation]
@@ -109,12 +140,26 @@ def main(argv: Sequence[str] | None = None) -> int:
             created_at=datetime.now(timezone.utc).isoformat(),
             inputs=inputs,
             eval_sets=eval_sets,
-            steps=(step,),
+            steps=(
+                {
+                    **asdict(step),
+                    "semantic_threshold": args.semantic_threshold,
+                    "embedding_model": asdict(digest(Path(args.embedding_model).resolve())),
+                    "tokenizer": asdict(digest(Path(args.tokenizer).resolve())),
+                },
+            )
+            if args.semantic
+            else (step,),
             outputs=(digest(report_path, len(report.hits)),),
             parent=parent,
         )
         manifest_path.write_text(serialize(manifest), encoding="utf-8", newline="\n")
-        print(render(report))
+        if args.markdown:
+            from wana.adapters.report.markdown import render_markdown
+
+            print(render_markdown(report))
+        else:
+            print(render(report))
         return 0 if report.ok else 1
     except (OSError, ValueError, EOFError) as exc:
         print(f"wana: {exc}", file=sys.stderr)

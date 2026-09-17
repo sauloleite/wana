@@ -1,0 +1,12 @@
+{
+  "wins": 6,
+  "losses": 8,
+  "ties": 86,
+  "non_tie_win_rate": 0.42857142857142855,
+  "wilson_95": [
+    0.21380798904474121,
+    0.6740935542034926
+  ],
+  "criterion_met": false,
+  "caveat": "Descriptive interval; repeated prompts across seeds are correlated. Use a clustered analysis for publication."
+}

@@ -1,0 +1,8 @@
+{
+  "checkpoint": "experiments/checkpoints/full-43",
+  "dataset_sha256": "f501d4222fdf60aad7d52d032738ac35431371b0c7fb3ed8bda2e359753e3965",
+  "predictions_sha256": "e2673a2e7bf8b468a450c742b909b1c9f1af992a971822d7ff5d05f88f8ae7b3",
+  "max_new_tokens": 128,
+  "do_sample": false,
+  "elapsed_seconds": 62.90451129199937
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@sauloleite/wana",
+  "version": "0.5.0",
+  "description": "Deterministic SFT contamination checks and manifest verification",
+  "type": "module",
+  "main": "index.js",
+  "exports": "./index.js",
+  "bin": {
+    "wana": "./cli.js"
+  },
+  "files": [
+    "index.js",
+    "cli.js",
+    "casefold.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@noble/hashes": "1.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sauloleite/wana.git",
+    "directory": "node"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

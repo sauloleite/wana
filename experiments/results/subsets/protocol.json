@@ -1,0 +1,5414 @@
+{
+  "seed": 42,
+  "full": 1000,
+  "selected": 200,
+  "random": 200,
+  "evaluation": 100,
+  "selected_ids": [
+    "26",
+    "212",
+    "471",
+    "512",
+    "633",
+    "829",
+    "1624",
+    "1682",
+    "2082",
+    "2889",
+    "3291",
+    "3315",
+    "3746",
+    "3796",
+    "4490",
+    "4519",
+    "4535",
+    "4652",
+    "5610",
+    "5957",
+    "6588",
+    "6698",
+    "6973",
+    "6985",
+    "7104",
+    "7161",
+    "7185",
+    "7310",
+    "7506",
+    "7856",
+    "8241",
+    "8352",
+    "9065",
+    "9656",
+    "10365",
+    "10587",
+    "10649",
+    "10732",
+    "11543",
+    "11909",
+    "12025",
+    "12133",
+    "12445",
+    "12465",
+    "12601",
+    "12721",
+    "13065",
+    "13182",
+    "13342",
+    "14328",
+    "14453",
+    "14577",
+    "14609",
+    "14694",
+    "14935",
+    "15155",
+    "15256",
+    "15367",
+    "15392",
+    "15514",
+    "15597",
+    "15679",
+    "15692",
+    "16088",
+    "16135",
+    "16371",
+    "16986",
+    "17380",
+    "17887",
+    "18120",
+    "18210",
+    "18254",
+    "18279",
+    "18292",
+    "19376",
+    "19445",
+    "19558",
+    "19660",
+    "19914",
+    "20094",
+    "20384",
+    "20552",
+    "21512",
+    "21684",
+    "21859",
+    "22118",
+    "22156",
+    "22362",
+    "23449",
+    "23869",
+    "24196",
+    "24596",
+    "24867",
+    "25102",
+    "25995",
+    "26148",
+    "26191",
+    "26502",
+    "26612",
+    "26632",
+    "26712",
+    "26764",
+    "27696",
+    "27885",
+    "28173",
+    "28562",
+    "28827",
+    "29041",
+    "29714",
+    "29736",
+    "29819",
+    "29914",
+    "29964",
+    "30257",
+    "30318",
+    "30465",
+    "30534",
+    "31015",
+    "31849",
+    "31952",
+    "31996",
+    "32343",
+    "32399",
+    "33081",
+    "33857",
+    "34794",
+    "35118",
+    "35141",
+    "35142",
+    "35190",
+    "35322",
+    "35427",
+    "35533",
+    "35741",
+    "35905",
+    "36154",
+    "36210",
+    "36333",
+    "36346",
+    "36960",
+    "37727",
+    "38242",
+    "38618",
+    "38962",
+    "39052",
+    "39069",
+    "39348",
+    "39453",
+    "39534",
+    "40060",
+    "40338",
+    "40535",
+    "40591",
+    "40708",
+    "40780",
+    "41106",
+    "41568",
+    "41613",
+    "41653",
+    "41789",
+    "42329",
+    "42437",
+    "42824",
+    "42954",
+    "43178",
+    "43237",
+    "43506",
+    "43576",
+    "43769",
+    "44390",
+    "44676",
+    "44796",
+    "45099",
+    "45230",
+    "45691",
+    "46062",
+    "47233",
+    "47405",
+    "47784",
+    "47823",
+    "47836",
+    "47908",
+    "48090",
+    "48144",
+    "48217",
+    "48265",
+    "48685",
+    "48736",
+    "48885",
+    "49016",
+    "49283",
+    "49379",
+    "49497",
+    "50352",
+    "50449",
+    "50663",
+    "51125",
+    "51274",
+    "51338",
+    "51454"
+  ],
+  "random_ids": [
+    "141",
+    "363",
+    "610",
+    "1624",
+    "1682",
+    "1776",
+    "1880",
+    "2638",
+    "2741",
+    "2889",
+    "3329",
+    "3842",
+    "3972",
+    "4196",
+    "4337",
+    "4535",
+    "4549",
+    "4801",
+    "5077",
+    "5161",
+    "5164",
+    "5367",
+    "5610",
+    "5613",
+    "6120",
+    "6181",
+    "6416",
+    "6916",
+    "7559",
+    "7564",
+    "7907",
+    "8364",
+    "8577",
+    "8680",
+    "8800",
+    "9068",
+    "9144",
+    "9884",
+    "10732",
+    "11215",
+    "12133",
+    "12445",
+    "12457",
+    "12521",
+    "12572",
+    "12601",
+    "12621",
+    "12742",
+    "13050",
+    "13065",
+    "13386",
+    "14005",
+    "14021",
+    "14284",
+    "14628",
+    "14694",
+    "14722",
+    "14915",
+    "14935",
+    "15010",
+    "15256",
+    "15414",
+    "15925",
+    "16009",
+    "16986",
+    "17049",
+    "17359",
+    "17754",
+    "17996",
+    "18132",
+    "18327",
+    "18676",
+    "18803",
+    "19234",
+    "19569",
+    "20000",
+    "20067",
+    "20094",
+    "20153",
+    "20384",
+    "20733",
+    "21118",
+    "21243",
+    "22118",
+    "22293",
+    "22541",
+    "23052",
+    "23909",
+    "24260",
+    "24807",
+    "24836",
+    "24846",
+    "25009",
+    "26612",
+    "26764",
+    "27248",
+    "27528",
+    "28249",
+    "28540",
+    "28577",
+    "28711",
+    "29041",
+    "29588",
+    "29714",
+    "29819",
+    "30034",
+    "30294",
+    "30674",
+    "31015",
+    "31035",
+    "31246",
+    "31259",
+    "31826",
+    "32016",
+    "32021",
+    "32399",
+    "33270",
+    "33857",
+    "33919",
+    "34581",
+    "34794",
+    "34807",
+    "34808",
+    "34913",
+    "35142",
+    "35190",
+    "35339",
+    "35533",
+    "36031",
+    "36256",
+    "36346",
+    "36422",
+    "36424",
+    "36530",
+    "36759",
+    "37296",
+    "37727",
+    "37762",
+    "38278",
+    "38311",
+    "38555",
+    "38618",
+    "38639",
+    "39023",
+    "39052",
+    "39453",
+    "39707",
+    "39728",
+    "39796",
+    "39920",
+    "40150",
+    "40591",
+    "40780",
+    "41106",
+    "41480",
+    "41565",
+    "41660",
+    "41874",
+    "42824",
+    "43450",
+    "43475",
+    "43506",
+    "43531",
+    "43705",
+    "43950",
+    "44390",
+    "44676",
+    "45211",
+    "45286",
+    "45692",
+    "45994",
+    "46062",
+    "46354",
+    "46651",
+    "47078",
+    "47233",
+    "47270",
+    "47323",
+    "47745",
+    "48231",
+    "48540",
+    "48577",
+    "48736",
+    "49209",
+    "49385",
+    "49429",
+    "49496",
+    "49530",
+    "49887",
+    "49935",
+    "50189",
+    "50370",
+    "50625",
+    "50855",
+    "50965",
+    "51028",
+    "51290",
+    "51384",
+    "51454",
+    "51909"
+  ],
+  "contamination_ok": true,
+  "decisions": [
+    {
+      "example_id": "26",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "37",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "110",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "141",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "212",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "232",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "363",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "386",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "425",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "471",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "512",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "610",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "633",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "665",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "752",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "829",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "967",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1130",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1270",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1276",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1280",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1335",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1378",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1550",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1600",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1624",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "1639",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1682",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "1739",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1767",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1776",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1808",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1880",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1902",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "1952",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2033",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2058",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2082",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "2103",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2361",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2507",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2537",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2604",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2614",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2638",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2691",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2741",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2847",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "2889",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "2908",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3003",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3028",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3087",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3286",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3291",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "3295",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3315",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "3329",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3413",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3550",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3665",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3727",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3746",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "3796",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "3832",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3842",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3858",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3972",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "3994",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4080",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4163",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4196",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4209",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4337",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4417",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4453",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4490",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "4496",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4508",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4519",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "4535",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "4549",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4558",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4585",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4643",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4652",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "4679",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4754",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4772",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4801",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4931",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4940",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "4980",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5077",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5161",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5164",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5229",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5250",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5280",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5367",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5372",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5501",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5557",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5610",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "5613",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5679",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5697",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "5957",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "6048",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6078",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6098",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6112",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6120",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6140",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6181",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6338",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6352",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6416",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6449",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6552",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6588",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "6619",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6678",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6698",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "6717",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6736",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6788",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6916",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "6973",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "6985",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "7014",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7084",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7104",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "7161",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "7185",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "7296",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7310",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "7331",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7496",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7506",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "7507",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7559",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7564",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7578",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7835",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7856",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "7907",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7930",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7933",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "7953",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8167",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8180",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8241",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "8272",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8341",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8352",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "8364",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8414",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8573",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8577",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8671",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8680",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8738",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8800",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "8893",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "9065",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "9068",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "9144",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "9150",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "9186",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "9363",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "9656",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "9671",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "9705",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "9768",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "9884",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "9986",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10014",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10016",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10026",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10128",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10144",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10187",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10189",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10317",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10338",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10365",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "10430",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10433",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10463",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10484",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10587",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "10589",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10649",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "10659",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10708",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10732",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "10789",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10816",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10821",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10899",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "10996",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "11120",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "11215",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "11405",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "11526",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "11543",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "11603",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "11702",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "11708",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "11754",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "11909",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "11917",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "12025",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "12133",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "12178",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "12445",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "12457",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "12465",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "12478",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "12521",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "12552",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "12556",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "12572",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "12601",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "12621",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "12656",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "12721",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "12742",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "12912",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "12997",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13031",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13035",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13050",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13065",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "13079",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13182",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "13342",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "13386",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13555",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13730",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13767",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13774",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13803",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13826",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13871",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13880",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13901",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13934",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "13969",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14005",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14008",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14021",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14040",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14110",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14180",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14267",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14284",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14328",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "14341",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14373",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14380",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14392",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14432",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14446",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14453",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "14522",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14577",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "14609",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "14628",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14694",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "14722",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14725",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14915",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "14935",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "15003",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15010",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15080",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15108",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15155",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "15247",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15256",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "15367",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "15392",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "15414",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15491",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15514",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "15597",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "15633",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15642",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15679",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "15692",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "15749",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15785",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15817",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15915",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15925",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15945",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15981",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "15989",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16009",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16043",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16046",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16049",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16088",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "16135",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "16162",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16203",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16205",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16246",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16263",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16295",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16331",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16353",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16371",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "16457",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16475",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16476",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16532",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16693",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16793",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16931",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "16986",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "17049",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17089",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17118",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17167",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17219",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17261",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17300",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17332",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17335",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17359",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17370",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17380",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "17397",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17407",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17485",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17486",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17496",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17546",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17589",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17691",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17700",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17754",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17807",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17848",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "17887",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "17996",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18024",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18105",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18120",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "18132",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18173",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18210",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "18217",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18231",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18235",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18250",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18254",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "18258",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18279",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "18292",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "18327",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18465",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18546",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18598",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18676",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18694",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18725",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18803",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "18965",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "19213",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "19234",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "19283",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "19376",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "19414",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "19445",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "19558",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "19569",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "19620",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "19660",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "19681",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "19723",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "19764",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "19825",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "19914",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "20000",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20067",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20094",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "20153",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20202",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20269",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20343",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20384",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "20428",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20444",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20552",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "20557",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20572",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20590",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20622",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20673",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20679",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20720",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20733",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20794",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "20952",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21118",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21122",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21243",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21252",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21300",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21376",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21420",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21453",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21512",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "21639",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21654",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21678",
+      "decision": "DROP",
+      "reason": "ifd_above_1"
+    },
+    {
+      "example_id": "21684",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "21702",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21770",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "21859",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "21966",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22010",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22028",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22046",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22059",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22118",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "22156",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "22236",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22293",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22298",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22304",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22362",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "22471",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22528",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22541",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22654",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22754",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22872",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22915",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "22935",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23012",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23052",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23056",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23178",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23219",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23253",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23283",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23449",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "23526",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23700",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23723",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23736",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23788",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23869",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "23897",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "23909",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24175",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24184",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24196",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "24217",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24260",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24285",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24472",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24504",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24596",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "24807",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24836",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24837",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24844",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24846",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24847",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24867",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "24898",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24911",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "24928",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "25009",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "25070",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "25102",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "25164",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "25216",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "25244",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "25484",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "25524",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "25558",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "25586",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "25822",
+      "decision": "DROP",
+      "reason": "ifd_above_1"
+    },
+    {
+      "example_id": "25928",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "25938",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "25995",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "26113",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26148",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "26175",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26191",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "26193",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26282",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26290",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26371",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26386",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26461",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26497",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26502",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "26612",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "26632",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "26634",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26635",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26677",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26712",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "26764",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "26941",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "26982",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27020",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27160",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27188",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27248",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27460",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27474",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27493",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27528",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27534",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27554",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27627",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27648",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27651",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27666",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27696",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "27722",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27730",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27759",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27862",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "27885",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "27966",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28028",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28074",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28077",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28089",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28166",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28173",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "28249",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28265",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28411",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28479",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28492",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28540",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28545",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28562",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "28577",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28599",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28711",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28716",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28827",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "28952",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28956",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "28977",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "29004",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "29041",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "29223",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "29371",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "29400",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "29439",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "29495",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "29543",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "29588",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "29714",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "29735",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "29736",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "29799",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "29819",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "29846",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "29914",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "29964",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "30034",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30071",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30108",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30129",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30166",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30257",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "30294",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30318",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "30444",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30450",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30455",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30465",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "30473",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30476",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30534",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "30606",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30630",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30674",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30822",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30847",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30976",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "30996",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31010",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31015",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "31035",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31108",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31138",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31148",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31201",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31246",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31259",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31546",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31686",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31732",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31758",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31812",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31826",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31827",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31849",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "31894",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "31952",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "31996",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "32016",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "32019",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "32021",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "32125",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "32166",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "32343",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "32394",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "32399",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "32717",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "32806",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "32954",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33081",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "33118",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33122",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33153",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33158",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33234",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33270",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33271",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33281",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33384",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33392",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33500",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33516",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33695",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33780",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33857",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "33919",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "33944",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34073",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34163",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34193",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34261",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34382",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34581",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34664",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34676",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34757",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34794",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "34807",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34808",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34911",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "34913",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35004",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35005",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35118",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "35141",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "35142",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "35146",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35190",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "35234",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35269",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35272",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35287",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35322",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "35339",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35343",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35348",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35351",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35399",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35427",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "35533",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "35560",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35600",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35713",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35741",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "35755",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35791",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "35905",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "35909",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36031",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36066",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36070",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36154",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "36178",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36210",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "36256",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36272",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36301",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36333",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "36346",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "36384",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36422",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36424",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36500",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36530",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36629",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36692",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36759",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36781",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36789",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36896",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "36960",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "36987",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37042",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37088",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37170",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37182",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37296",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37334",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37345",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37423",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37727",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "37728",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37735",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37762",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37787",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37837",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37924",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37940",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "37957",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38009",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38049",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38112",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38175",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38242",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "38251",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38278",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38284",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38311",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38555",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38564",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38618",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "38639",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38698",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38790",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38803",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38828",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "38962",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "38996",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39023",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39052",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "39069",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "39086",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39096",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39111",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39252",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39348",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "39453",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "39534",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "39565",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39638",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39707",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39728",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39753",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39758",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39796",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39909",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39920",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "39998",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "40060",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "40086",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "40150",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "40338",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "40364",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "40535",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "40583",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "40591",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "40675",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "40708",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "40719",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "40780",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "40839",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "40979",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "41074",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "41106",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "41120",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "41198",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "41272",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "41359",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "41480",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "41565",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "41568",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "41613",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "41653",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "41660",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "41753",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "41789",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "41874",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "41905",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "41943",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42006",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42040",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42123",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42129",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42303",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42329",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "42348",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42437",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "42469",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42590",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42607",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42628",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42713",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42738",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42824",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "42858",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42906",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "42954",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "42995",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43081",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43178",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "43187",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43237",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "43255",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43336",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43353",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43376",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43450",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43475",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43506",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "43513",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43531",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43576",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "43705",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43708",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43750",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43769",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "43790",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43835",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43842",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43873",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43891",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43903",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43920",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "43950",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44019",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44092",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44129",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44250",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44277",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44348",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44388",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44390",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "44508",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44532",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44583",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44596",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44676",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "44699",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44796",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "44843",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "44866",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45013",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45055",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45064",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45099",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "45211",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45230",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "45259",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45260",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45286",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45336",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45478",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45581",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45607",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45636",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45651",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45691",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "45692",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45753",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45840",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45952",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45958",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45962",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "45994",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46062",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "46107",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46174",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46246",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46295",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46354",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46389",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46450",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46651",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46723",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46762",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46859",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46925",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "46936",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47029",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47049",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47077",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47078",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47081",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47138",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47148",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47164",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47169",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47190",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47233",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "47270",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47323",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47405",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "47459",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47486",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47724",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47745",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47780",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47784",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "47823",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "47836",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "47874",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "47908",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "47966",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48090",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "48144",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "48172",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48217",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "48231",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48265",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "48271",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48302",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48405",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48540",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48577",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48598",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48624",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48655",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48685",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "48736",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "48823",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48885",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "48956",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "48989",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49016",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "49019",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49029",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49088",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49117",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49183",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49209",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49215",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49226",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49268",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49274",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49283",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "49379",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "49385",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49429",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49496",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49497",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "49530",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49687",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49729",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49820",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49846",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49887",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49935",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49950",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "49971",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50036",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50174",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50188",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50189",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50259",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50352",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "50363",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50370",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50449",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "50465",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50536",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50625",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50663",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "50680",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50766",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50855",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50965",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "50973",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "51014",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "51028",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "51125",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "51198",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "51274",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "51290",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "51338",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "51384",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "51420",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "51454",
+      "decision": "KEEP",
+      "reason": "selected"
+    },
+    {
+      "example_id": "51495",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "51539",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "51601",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "51909",
+      "decision": "DROP",
+      "reason": "budget"
+    },
+    {
+      "example_id": "51965",
+      "decision": "DROP",
+      "reason": "budget"
+    }
+  ]
+}

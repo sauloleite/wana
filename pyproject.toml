@@ -5,14 +5,14 @@ build-backend = "hatchling.build"
 [project]
 name = "wana"
 dynamic = ["version"]
-description = "Deterministic contamination audits and provenance for fine-tuning datasets."
+description = "Score, select and audit fine-tuning datasets with bundled offline model weights."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.10"
 authors = [{name = "Saulo Leite", email = "sjoldeveloper@gmail.com"}]
 keywords = ["fine-tuning", "jsonl", "dataset", "sft", "contamination", "provenance"]
-dependencies = []
+dependencies = ["llm-smollm2==0.1.2", "llama-cpp-python>=0.3.7,<0.4"]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Programming Language :: Python :: 3",
@@ -25,6 +25,10 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
+score = ["transformers>=4.46,<6", "torch>=2.4"]
+embed = ["onnxruntime>=1.20", "tokenizers>=0.20", "numpy>=1.26"]
+tokens = ["tiktoken>=0.7"]
+all = ["wana[score,embed,tokens]"]
 dev = ["pytest>=8", "pytest-cov>=5", "hypothesis>=6", "ruff>=0.6", "mypy>=1.10", "build>=1.2", "twine>=6", "pre-commit>=4"]
 
 [project.scripts]
@@ -41,7 +45,15 @@ path = "wana/__init__.py"
 packages = ["wana"]
 
 [tool.hatch.build.targets.sdist]
-include = ["wana", "tests", "docs", "README.md", "CHANGELOG.md", "LICENSE", "pyproject.toml"]
+include = [
+  "wana", "tests", "docs", "README.md", "CHANGELOG.md", "LICENSE", "pyproject.toml",
+  "experiments/*.py", "experiments/README.md", "experiments/results/**/summary.json",
+  "experiments/results/**/protocol.json", "experiments/results/**/contamination.json",
+  "experiments/results/**/ifd.png", "experiments/results/**/ifd.svg",
+  "experiments/results/benchmark/*.json", "experiments/results/benchmark/*.judgments.jsonl",
+  "experiments/results/benchmark/README.md", "experiments/results/benchmark/comparisons.png",
+  "experiments/results/benchmark/comparisons.svg",
+]
 
 [tool.ruff]
 line-length = 100

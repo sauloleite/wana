@@ -1,0 +1,256 @@
+[
+  {
+    "train": [
+      {
+        "instruction": "Straße CAFÉ Ⅳ 中文 test",
+        "output": ""
+      }
+    ],
+    "evaluation": [
+      {
+        "instruction": "STRASSE café ⅳ 中文 test",
+        "output": ""
+      }
+    ],
+    "options": {
+      "ngram": 2,
+      "shingle": 1,
+      "threshold": 0.8,
+      "numPerm": 16,
+      "bands": 16,
+      "ignoreTemplate": []
+    },
+    "report": {
+      "eval_records": 1,
+      "fail_on": [
+        "EXACT",
+        "NEAR"
+      ],
+      "hits": [
+        {
+          "eval_id": "b",
+          "evidence": "café ⅳ",
+          "level": "EXACT",
+          "train_id": "a",
+          "value": 1.0
+        },
+        {
+          "eval_id": "b",
+          "evidence": "café",
+          "level": "NEAR",
+          "train_id": "a",
+          "value": 1.0
+        }
+      ],
+      "ok": false,
+      "train_records": 1
+    }
+  },
+  {
+    "train": [
+      {
+        "instruction": "one two three four five six seven eight nine ten",
+        "output": ""
+      }
+    ],
+    "evaluation": [
+      {
+        "instruction": "one two three four five six seven eight nine eleven",
+        "output": ""
+      }
+    ],
+    "options": {
+      "ngram": 2,
+      "shingle": 1,
+      "threshold": 0.8,
+      "numPerm": 16,
+      "bands": 16,
+      "ignoreTemplate": []
+    },
+    "report": {
+      "eval_records": 1,
+      "fail_on": [
+        "EXACT",
+        "NEAR"
+      ],
+      "hits": [
+        {
+          "eval_id": "b",
+          "evidence": "eight nine",
+          "level": "EXACT",
+          "train_id": "a",
+          "value": 1.0
+        },
+        {
+          "eval_id": "b",
+          "evidence": "eight",
+          "level": "NEAR",
+          "train_id": "a",
+          "value": 0.8181818181818182
+        }
+      ],
+      "ok": false,
+      "train_records": 1
+    }
+  },
+  {
+    "train": [
+      {
+        "instruction": "template repeated text apple",
+        "output": ""
+      }
+    ],
+    "evaluation": [
+      {
+        "instruction": "template repeated text orange",
+        "output": ""
+      }
+    ],
+    "options": {
+      "ngram": 2,
+      "shingle": 1,
+      "threshold": 0.8,
+      "numPerm": 16,
+      "bands": 16,
+      "ignoreTemplate": [
+        "template repeated text"
+      ]
+    },
+    "report": {
+      "eval_records": 1,
+      "fail_on": [
+        "EXACT",
+        "NEAR"
+      ],
+      "hits": [],
+      "ok": true,
+      "train_records": 1
+    }
+  },
+  {
+    "train": [
+      {
+        "instruction": "",
+        "output": ""
+      }
+    ],
+    "evaluation": [
+      {
+        "instruction": "",
+        "output": ""
+      }
+    ],
+    "options": {
+      "ngram": 2,
+      "shingle": 1,
+      "threshold": 0.8,
+      "numPerm": 16,
+      "bands": 16,
+      "ignoreTemplate": []
+    },
+    "report": {
+      "eval_records": 1,
+      "fail_on": [
+        "EXACT",
+        "NEAR"
+      ],
+      "hits": [],
+      "ok": true,
+      "train_records": 1
+    }
+  },
+  {
+    "train": [
+      {
+        "instruction": "short text",
+        "output": ""
+      }
+    ],
+    "evaluation": [
+      {
+        "instruction": "short text",
+        "output": ""
+      }
+    ],
+    "options": {
+      "ngram": 2,
+      "shingle": 1,
+      "threshold": 0.8,
+      "numPerm": 16,
+      "bands": 16,
+      "ignoreTemplate": []
+    },
+    "report": {
+      "eval_records": 1,
+      "fail_on": [
+        "EXACT",
+        "NEAR"
+      ],
+      "hits": [
+        {
+          "eval_id": "b",
+          "evidence": "short text",
+          "level": "EXACT",
+          "train_id": "a",
+          "value": 1.0
+        },
+        {
+          "eval_id": "b",
+          "evidence": "short",
+          "level": "NEAR",
+          "train_id": "a",
+          "value": 1.0
+        }
+      ],
+      "ok": false,
+      "train_records": 1
+    }
+  },
+  {
+    "train": [
+      {
+        "instruction": "𐐀 𐐁 café",
+        "output": ""
+      }
+    ],
+    "evaluation": [
+      {
+        "instruction": "𐐨 𐐩 CAFÉ",
+        "output": ""
+      }
+    ],
+    "options": {
+      "ngram": 2,
+      "shingle": 1,
+      "threshold": 0.8,
+      "numPerm": 16,
+      "bands": 16,
+      "ignoreTemplate": []
+    },
+    "report": {
+      "eval_records": 1,
+      "fail_on": [
+        "EXACT",
+        "NEAR"
+      ],
+      "hits": [
+        {
+          "eval_id": "b",
+          "evidence": "𐐨 𐐩",
+          "level": "EXACT",
+          "train_id": "a",
+          "value": 1.0
+        },
+        {
+          "eval_id": "b",
+          "evidence": "café",
+          "level": "NEAR",
+          "train_id": "a",
+          "value": 1.0
+        }
+      ],
+      "ok": false,
+      "train_records": 1
+    }
+  }
+]

@@ -1,3 +1,5 @@
+from typing import Any
+
 from wana.domain.manifest import Digest, Manifest, Step
 
 
@@ -7,7 +9,7 @@ def build_manifest(
     created_at: str,
     inputs: tuple[Digest, ...],
     eval_sets: tuple[Digest, ...],
-    steps: tuple[Step, ...],
+    steps: tuple[Step | dict[str, Any], ...],
     outputs: tuple[Digest, ...],
     parent: Digest | None = None,
 ) -> Manifest:

@@ -11,3 +11,14 @@ htmlcov/
 dist/
 build/
 wana-check/
+.DS_Store
+node/node_modules/
+node/*.tgz
+experiments/data/
+experiments/models/
+experiments/results/**/cache.sqlite3
+experiments/results/**/scores.jsonl
+experiments/results/subsets/*.jsonl
+experiments/checkpoints/
+experiments/results/benchmark/*answers.jsonl
+experiments/results/retention-curve/*answers.jsonl

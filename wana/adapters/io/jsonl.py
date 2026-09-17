@@ -1,6 +1,7 @@
 """Strict, streaming JSONL input with standard-library compression."""
 
 import bz2
+import copy
 import gzip
 import json
 import lzma
@@ -53,7 +54,16 @@ def parse_record(record: Any, example_id: str) -> Example:
         ]
     else:
         raise ValueError("expected openai-chat, alpaca or sharegpt record")
-    return Example(example_id, tuple(messages))
+    return Example(
+        example_id,
+        tuple(messages),
+        {
+            k: copy.deepcopy(v)
+            for k, v in record.items()
+            if k not in ("messages", "conversations", "wana")
+        },
+        copy.deepcopy(record),
+    )
 
 
 class JsonlReader:

@@ -1,136 +1,187 @@
 # wana
 
-Deterministic contamination audits and provenance for fine-tuning datasets.
-**Python 3.10+ · zero runtime dependencies · MIT**
+Audit, score and select fine-tuning datasets with evidence and file provenance.
+Python 3.10+ · Python and Node packages in one repository · MIT library.
 
 “Wana” means “Path” in WANYAM, an extinct indigenous language of the Txapacura
-family. The project connects fine-tuning datasets to evidence for their curation.
+family. Wana connects training datasets to evidence for their curation.
 
-## Status
+## Release status
 
-This repository implements **0.1.0, phase 1** of the [construction plan](docs/construction-plan.md):
-EXACT/NEAR contamination checks, three input formats, compressed JSONL, JSON
-reports, terminal summaries and chained manifests. PyPI publication requires
-completing the [release setup](docs/publishing.md).
+**0.1.0 is published on PyPI. This checkout prepares 0.5.0.** It implements IFD,
+selection, semantic matching, the composed pipeline and the Node port. Local
+validation, Alpaca-1k scoring and a three-seed trained-model pilot are documented in
+[validation](docs/validation.md) and [experiments](experiments/README.md).
+The pilot did **not establish superiority over random selection** (49.3%
+preference, clustered 95% interval 46.8%–51.8%). See [phase status](docs/roadmap-status.md) for remaining acceptance
+criteria and external publication setup.
 
-Scoring (IFD), subset selection, embeddings, `run`, `explain`, caching and the
-Node package are future phases. No model extras are advertised before their
-adapters exist. No training-quality or benchmark result is claimed.
+## Install
 
-## Install from source
+For this checkout:
 
 ```sh
 python -m pip install .
 wana --version
 ```
 
-After publication, install the release with `pip install wana==0.1.0`.
+After the new release is published: `pip install wana==0.5.0`.
 
-## Check contamination
+**Normal installation includes the scoring model weights.** Wana depends on
+`llm-smollm2==0.1.2`, which bundles SmolLM2-135M-Instruct Q4_1 in a roughly 93 MB
+wheel, and llama-cpp-python. Once installed, default scoring is offline. Native
+runtime installation may need C/C++ build tools. There are no first-use model
+downloads or post-install scripts in Wana.
+
+The model is small and predominantly English-oriented. Quantization and model
+choice affect IFD ranking; IFD is not an accuracy or correctness score. The
+[model decision](docs/adr/002-model-and-monorepo.md) compares packaging options,
+limitations and licenses. This user-requested default supersedes the original
+plan's zero-dependency installation.
+
+Optional adapters:
 
 ```sh
-wana check dataset/train.jsonl --eval dataset/valid.jsonl -o audit/
-wana check train-a.jsonl train-b.jsonl --eval valid.jsonl --eval golden.jsonl -o audit/
-wana check train.jsonl.gz --eval valid.jsonl.xz --ignore-template 'Answer the following question:'
+pip install 'wana[score]'   # Transformers + PyTorch; choose another scoring model
+pip install 'wana[embed]'   # ONNX Runtime + tokenizer for local sentence embeddings
+pip install 'wana[tokens]'  # tiktoken counter for the Python API
+pip install 'wana[all]'
 ```
 
-The command writes `audit/contamination.json` and `audit/manifest.json` even
-when overlap causes a failing exit code. Existing reports in the output directory
-are replaced; source files and the detected parent manifest are protected.
-
-- **0:** no hit violates the selected policy.
-- **1:** a hit violates the policy (EXACT and NEAR by default).
-- **2:** invalid arguments, malformed data or filesystem error.
-
-`--fail-on EXACT` only fails on EXACT; an empty `--fail-on` records evidence
-without failing. Use `--ngram 13`, `--shingle 5` and `--threshold 0.8` to configure
-matching. Repeated `--ignore-template TEXT` removes literal text, after Unicode
-NFC normalization and case folding. It is not a regular expression or a template
-parser. Review evidence before excluding examples.
-
-The parent is auto-detected as `manifest.json` beside the first training input,
-or supplied with `--parent PATH`. It may be a Wyra manifest. Every input,
-evaluation set, parent and output report receives a SHA-256 digest. Parameters,
-record counts and the package version are recorded automatically.
-
-With Wyra 0.1.1, the validation filename is `validation.jsonl`:
+## CLI
 
 ```sh
+# Audit overlap. Exit 1 on EXACT or NEAR hits, 2 on invalid input/I/O.
+wana check train.jsonl --eval valid.jsonl -o audit/ --markdown
+
+# Default: installed SmolLM2 model. --resume caches losses by content and model identity.
+wana score train.jsonl -o scored.jsonl --resume
+wana score train.jsonl -o scored.jsonl --provider transformers_cpu \
+  --model HuggingFaceTB/SmolLM2-135M-Instruct --revision MODEL_COMMIT
+
+# --by is the ranking score; --strata is the metadata field.
+wana select scored.jsonl -o selected/ --keep 0.2 --by ifd
+wana select scored.jsonl -o selected/ --keep 200 --selector stratified --strata source
+wana select scored.jsonl -o selected/ --keep 0.2 --diverse --threshold 0.9
+
+# Full pipeline, with parent manifest automatically linked.
 wyra build docs/*.md -o dataset --valid 0.1
-wana check dataset/train.jsonl --eval dataset/validation.jsonl -o audit/
+wana run dataset/ -o selected/ --eval dataset/validation.jsonl --keep 0.2 --resume
+wana explain selected/manifest.json
 ```
+
+`--provider fake` is for tests only. `--scorer length` skips model execution;
+use `--by length` when selecting those scores. `WANA_PROVIDER`, `WANA_MODEL`
+and `WANA_CACHE_DIR` supply defaults. CPU context defaults to 2048 tokens; long
+examples fail explicitly, and `--max-tokens` configures the limit. IFD uses the
+final assistant response and the preceding messages as context. Scores above
+1 are flagged and excluded by default; `--include-ifd-above-one` retains them.
+
+`--keep 1` means one record; `--keep 1.0` means all. Fractional budgets round
+down. Reapplying a fractional budget reduces the current input again; fixed-count
+top-k selection is idempotent. Ties use original order, independent of seed.
+Stratified selection uses largest-remainder quotas over eligible records.
+Diversity accepts only examples below the cosine similarity threshold; it may
+return fewer than the requested budget. Default hashing embeddings are lexical
+TF-IDF vectors fitted on the input corpus, not semantic representations.
+
+### Semantic check (opt-in)
+
+```sh
+wana check train.jsonl --eval valid.jsonl -o audit/ --semantic \
+  --embedding-model /path/to/model_quantized.onnx --tokenizer /path/to/tokenizer.json \
+  --semantic-threshold 0.9 --fail-on EXACT NEAR SEMANTIC
+```
+
+Supply a local ONNX sentence encoder with `input_ids` and optional
+`attention_mask`/`token_type_ids`, and a Hugging Face tokenizer JSON. The adapter
+supports pooled sentence output or attention-mask mean pooling of token output.
+It was tested with a pinned all-MiniLM-L6-v2 ONNX snapshot. Embedding tokenization
+truncates to 512 tokens. `select` also accepts `--embedder onnx` with those paths.
+
+## Artifacts and Python API
+
+`run` writes:
+
+| File | Content |
+| --- | --- |
+| `scored.jsonl` | Original records + `wana.scores`, flags and every KEEP/DROP reason |
+| `selected.jsonl` | Kept records, in original order, with annotations |
+| `contamination.json` | Evidence against evaluation sets for the selected subset |
+| `manifest.json` | Input/output SHA-256, parameters and optional parent |
+| `report.md` | Human-readable contamination evidence |
+
+Standalone `score` and `select` write `<output-stem>.manifest.json`; `select`
+also writes `<output-stem>.decisions.json` for all input records. A sidecar
+manifest beside the input takes precedence over its directory's `manifest.json`.
+A failing `run` writes artifacts for inspection; it does not automatically delete
+contaminated records. Outputs in the destination are replaced; input and parent
+paths are protected against collisions.
 
 ```python
-from wana import check_contamination
+from wana import check_contamination, score_dataset, select_subset, run, verify_manifest
 
-report = check_contamination("train.jsonl", eval_sets=["valid.jsonl"])
-for hit in report.hits:
-    print(hit.train_id, hit.eval_id, hit.level.value, hit.value, hit.evidence)
-assert report.ok
+scored = score_dataset("train.jsonl")
+selection = select_subset(scored, keep=0.2)
+report = check_contamination([row.example for row in selection.examples], eval_sets=["valid.jsonl"])
+result = run("dataset/", out_dir="selected", eval_sets=["dataset/validation.jsonl"])
+assert verify_manifest("selected/manifest.json").ok
 ```
 
-The API also accepts iterables of immutable `Example` objects. It returns a
-`Report` dataclass and does not write files. Inject custom implementations of
-`Matcher` using `matchers=[...]`; inheritance is unnecessary. Loaded examples
-must have unique IDs within each side of the comparison.
+Public operations accept paths or loaded dataclasses. Scorers, selectors and
+matchers are injected through small Protocol interfaces. Custom components can
+use `Registry` factories without inheritance. An in-memory `run` returns typed
+results; it does not invent file input hashes or a file manifest.
 
-## Input formats
+Manifest verification checks direct artifact hashes and the parent file, not
+cryptographic authenticity or recursive upstream integrity. New pipeline
+manifests use absolute file paths and need those files to remain accessible.
+The 0.1 check format retains cwd-relative paths. Creation timestamps vary.
+Original dataset metadata is retained; reports contain source text.
 
-One object per nonblank line, automatically detected per record:
+## Formats, determinism and limits
 
-```jsonl
-{"messages":[{"role":"user","content":"Question"},{"role":"assistant","content":"Answer"}]}
-{"instruction":"Question","input":"Optional context","output":"Answer"}
-{"conversations":[{"from":"human","value":"Question"},{"from":"gpt","value":"Answer"}]}
-```
+Automatically detects text-only OpenAI chat (`messages`), Alpaca
+(`instruction`, optional `input`, `output`) and ShareGPT (`conversations`).
+Python reads UTF-8 JSONL, gzip, xz and bzip2. Invalid content and unknown roles
+raise contextual errors. All message contents are compared, including system
+messages. `--ignore-template TEXT` removes repeated literal text after NFC/case
+normalization; it is not a regex or a template parser.
 
-Plain UTF-8 JSONL and `.gz`, `.xz`, `.bz2` are supported. IDs use the supplied
-path and physical line number, so an evidence pair locates the source records.
-Text-only message content is required; multimodal payloads, null content and
-unknown roles raise contextual errors rather than silently discarding content.
-Extra top-level metadata is not used for matching. All message contents,
-including system messages, are compared; formatting and role labels are excluded.
+EXACT means a shared normalized word n-gram (default 13), not identical whole
+records. NEAR uses 64 MinHash permutations/16 LSH bands and verifies candidates
+with exact shingle Jaccard (default 5-word shingles, threshold 0.8). LSH can miss
+near matches. Records shorter than each matcher size produce no hits at that
+level. A pair may carry evidence from multiple levels. Empty datasets are valid.
+`report.ok` means no detector found a configured violation, not proven absence
+of leakage. The default failure policy excludes SEMANTIC unless requested.
 
-## Detection and limits
+Readers stream, but scoring/selection and matching materialize their datasets,
+indexes and results. Memory grows with inputs and matches. Pure reports are
+stable for the same path strings, order, parameters and supported Unicode
+normalization; model floating-point losses can vary across platforms.
 
-- **EXACT:** at least one shared normalized word 13-gram, using an inverted
-  index. The score `1.0` means a shared n-gram, not identical whole records.
-- **NEAR:** deterministic BLAKE2b MinHash with 64 permutations and 16 LSH bands
-  proposes pairs; actual shingle Jaccard must reach the threshold. LSH is
-  approximate and can miss pairs. Both EXACT and NEAR may describe the same pair.
-- **SEMANTIC:** not checked in 0.1.0. Paraphrases and translations may escape.
+## Node package
 
-Records shorter than each matcher's n-gram/shingle size produce no hit for that
-matcher. Empty datasets are valid and report zero records. `report.ok` means
-no configured detector found a policy violation; it does not prove absence of
-leakage. Evidence contains source text and should be handled like the datasets.
-
-The reader streams, but the checker currently materializes datasets, evaluation
-indexes and hits in memory. Large corpora need memory proportional to input
-and matches. No network or model download occurs.
-
-Reports are deterministic for the same input bytes, path strings, ordering and
-parameters, independent of Python's hash seed. JSON files use UTF-8 and LF across
-platforms. Manifest timestamps vary; output report digests remain stable.
-Moving inputs changes path-based IDs. The manifest hashes raw compressed bytes
-and does not sign or authenticate content.
+`node/` contains **@sauloleite/wana**. It implements EXACT/NEAR checks and manifest
+verification, with shared Python/Node fixtures. It supports plain JSONL/gzip and
+does not include IFD, embeddings or a model. See [Node README](node/README.md).
+Python and npm publication are independent; npm's first publication requires
+account/scope access and publisher configuration.
 
 ## Development
 
 ```sh
-python -m venv .venv
-# Activate your virtual environment, then:
-python -m pip install -e '.[dev]'
+pip install -e '.[dev]'
 ruff check .
 ruff format --check .
 mypy wana
 pytest --cov --cov-report=term-missing
 python -m build
-python -m twine check dist/*
+python -m twine check dist/wana-0.5.0*
+cd node && npm install && npm test
 ```
 
-CI targets Python 3.10–3.13 on Linux, macOS and Windows. Domain/application
-coverage must remain at least 90%. Golden fixtures, property tests and subprocess
-checks exercise formats, evidence, determinism and matcher symmetry. See
-[architecture decisions](docs/adr/001-core.md), [releases](docs/publishing.md)
-and [changelog](CHANGELOG.md).
+CI covers Python 3.10–3.13 on Linux/macOS/Windows, shared Node goldens, real
+Wyra integration and an optional-runtime Linux job. PyPI publication runs on
+pushes to `main` after those jobs pass. [Publication setup](docs/publishing.md).

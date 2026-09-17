@@ -1,0 +1,29 @@
+{
+  "model_snapshot": "HuggingFaceTB/SmolLM2-135M-Instruct@12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "training_seeds": [
+    42,
+    43,
+    44
+  ],
+  "arms": {
+    "selected": 200,
+    "random": 200,
+    "full": 1000
+  },
+  "epochs": 1,
+  "learning_rate": 2e-05,
+  "gradient_clip": 1.0,
+  "training_device": "mps",
+  "generation": "greedy",
+  "max_new_tokens": 128,
+  "evaluation_examples": 100,
+  "judge": "Qwen3-4B-Instruct-2507-Q4_K_M",
+  "judge_repository_revision": "4edb920b6f14e3b9284d4502a6485103d72cde05",
+  "primary_comparison": "selected versus random",
+  "secondary_comparison": "selected versus full",
+  "counterbalanced": true,
+  "disagreement_policy": "tie",
+  "analysis": "per-seed descriptive Wilson intervals plus prompt-cluster bootstrap",
+  "claim_scope": "small-model local pilot; not exact replication of the original paper",
+  "judge_sha256": "8cdb57cbb880d313736a9bc4e3d3d2485f145b5e19cf33783746e753e82641fc"
+}

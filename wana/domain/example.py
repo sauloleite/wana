@@ -1,7 +1,8 @@
 """Format-independent, immutable training examples."""
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enum import Enum
+from typing import Any
 
 
 class Role(str, Enum):
@@ -21,6 +22,9 @@ class Message:
 class Example:
     id: str
     messages: tuple[Message, ...]
+
+    metadata: dict[str, Any] = field(default_factory=dict, compare=False)
+    original: dict[str, Any] = field(default_factory=dict, compare=False)
 
     @property
     def text(self) -> str:

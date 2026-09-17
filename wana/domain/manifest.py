@@ -1,6 +1,7 @@
 """Portable provenance records; timestamps are supplied by the caller."""
 
 from dataclasses import dataclass
+from typing import Any
 
 
 @dataclass(frozen=True)
@@ -30,6 +31,6 @@ class Manifest:
     created_at: str
     inputs: tuple[Digest, ...]
     eval_sets: tuple[Digest, ...]
-    steps: tuple[Step, ...]
+    steps: tuple[Step | dict[str, Any], ...]
     outputs: tuple[Digest, ...]
     parent: Digest | None = None
