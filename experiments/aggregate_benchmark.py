@@ -14,8 +14,11 @@ def aggregate(rows: list[dict[str, object]], *, samples: int = 10000) -> dict[st
         raise ValueError("at least 100 bootstrap samples required")
     baselines = {row.get("baseline") for row in rows}
     judges = {row.get("judge_sha256") for row in rows}
+    policies = {row.get("order_policy", "strict") for row in rows}
     if len(baselines) != 1 or not baselines <= {"random", "full"} or len(judges) != 1:
         raise ValueError("aggregate one baseline and one judge at a time")
+    if len(policies) != 1:
+        raise ValueError("aggregate one order policy at a time")
     grouped: dict[str, list[float]] = defaultdict(list)
     seen = set()
     counts = {"selected": 0, "baseline": 0, "tie": 0}
@@ -47,6 +50,7 @@ def aggregate(rows: list[dict[str, object]], *, samples: int = 10000) -> dict[st
     )
     return {
         "baseline": next(iter(baselines)),
+        "order_policy": next(iter(policies)),
         "prompts": len(grouped),
         "seeds": sorted(seeds),
         "judgments": len(rows),

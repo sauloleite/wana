@@ -8,13 +8,14 @@ family. Wana connects training datasets to evidence for their curation.
 
 ## Release status
 
-**0.1.0 is published on PyPI. This checkout prepares 0.5.0.** It implements IFD,
-selection, semantic matching, the composed pipeline and the Node port. Local
-validation, Alpaca-1k scoring and a three-seed trained-model pilot are documented in
-[validation](docs/validation.md) and [experiments](experiments/README.md).
-The pilot did **not establish superiority over random selection** (49.3%
-preference, clustered 95% interval 46.8%–51.8%). See [phase status](docs/roadmap-status.md) for remaining acceptance
-criteria and external publication setup.
+**Python 0.5.0 and @sauloleite/wana 0.5.0 are published.** This checkout prepares
+Python 0.5.1. The Python 3.10–3.13 matrix passed on Linux/macOS/Windows, including
+real adapter and Wyra integration; the npm package was installed from the registry.
+See [validation](docs/validation.md) and [phase status](docs/roadmap-status.md).
+
+The corrected three-seed pilot did **not establish superiority over random**
+(48.3% preference, clustered 95% interval 45.5%–51.2%). The broader retention
+curve is being completed; publication is not proof of scientific acceptance.
 
 ## Install
 
@@ -25,7 +26,7 @@ python -m pip install .
 wana --version
 ```
 
-After the new release is published: `pip install wana==0.5.0`.
+Install the published release with `pip install wana==0.5.0`.
 
 **Normal installation includes the scoring model weights.** Wana depends on
 `llm-smollm2==0.1.2`, which bundles SmolLM2-135M-Instruct Q4_1 in a roughly 93 MB
@@ -78,8 +79,11 @@ final assistant response and the preceding messages as context. Scores above
 1 are flagged and excluded by default; `--include-ifd-above-one` retains them.
 
 `--keep 1` means one record; `--keep 1.0` means all. Fractional budgets round
-down. Reapplying a fractional budget reduces the current input again; fixed-count
-top-k selection is idempotent. Ties use original order, independent of seed.
+down. In 0.5.1, repeating a standalone `select` with the same parameters and
+version reuses its verified sidecar manifest and copies the selected bytes.
+Use `--reselect` to apply the budget to the reduced input again. Missing or
+different provenance uses the ordinary current-input budget. The in-memory API
+also applies its budget to the current input; fixed-count top-k is idempotent. Ties use original order, independent of seed.
 Stratified selection uses largest-remainder quotas over eligible records.
 Diversity accepts only examples below the cosine similarity threshold; it may
 return fewer than the requested budget. Default hashing embeddings are lexical
@@ -128,6 +132,16 @@ result = run("dataset/", out_dir="selected", eval_sets=["dataset/validation.json
 assert verify_manifest("selected/manifest.json").ok
 ```
 
+To score incrementally in Python:
+
+```python
+from wana import iter_scored
+from wana.adapters.io.scored import write_scored
+from pathlib import Path
+
+write_scored(Path("scored.jsonl"), iter_scored("train.jsonl"))
+```
+
 Public operations accept paths or loaded dataclasses. Scorers, selectors and
 matchers are injected through small Protocol interfaces. Custom components can
 use `Registry` factories without inheritance. An in-memory `run` returns typed
@@ -156,8 +170,12 @@ level. A pair may carry evidence from multiple levels. Empty datasets are valid.
 `report.ok` means no detector found a configured violation, not proven absence
 of leakage. The default failure policy excludes SEMANTIC unless requested.
 
-Readers stream, but scoring/selection and matching materialize their datasets,
-indexes and results. Memory grows with inputs and matches. Pure reports are
+Readers and the `score` CLI process records incrementally. Python callers can
+use `iter_scored(source)` for the same behavior; `score_dataset` collects results
+for convenience. Scoring retains IDs to detect duplicates. File-based checks replay training for each matcher without retaining training
+record bodies; evaluation indexes and evidence remain in memory. Selection
+and `run` still materialize datasets and results; memory grows with inputs
+and matches. Scored JSONL replacement is atomic if scoring or writing fails. Pure reports are
 stable for the same path strings, order, parameters and supported Unicode
 normalization; model floating-point losses can vary across platforms.
 
@@ -166,8 +184,8 @@ normalization; model floating-point losses can vary across platforms.
 `node/` contains **@sauloleite/wana**. It implements EXACT/NEAR checks and manifest
 verification, with shared Python/Node fixtures. It supports plain JSONL/gzip and
 does not include IFD, embeddings or a model. See [Node README](node/README.md).
-Python and npm publication are independent; npm's first publication requires
-account/scope access and publisher configuration.
+Python and npm publication are independent. Install with
+`npm install @sauloleite/wana` or run `npx @sauloleite/wana --version`.
 
 ## Development
 
@@ -178,7 +196,7 @@ ruff format --check .
 mypy wana
 pytest --cov --cov-report=term-missing
 python -m build
-python -m twine check dist/wana-0.5.0*
+python -m twine check dist/wana-0.5.1*
 cd node && npm install && npm test
 ```
 

@@ -1,0 +1,22 @@
+name: latest adapter smoke
+on:
+  schedule:
+    - cron: '17 8 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  adapters:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e ".[dev,score,embed]"
+      - run: python -m pip install --upgrade transformers torch onnxruntime tokenizers
+      - run: python experiments/download_smoke_models.py
+      - run: pytest tests/test_optional_adapters.py
+        env:
+          WANA_TEST_TRANSFORMERS_MODEL: experiments/models/smollm2
+          WANA_TEST_ONNX_MODEL: experiments/models/minilm

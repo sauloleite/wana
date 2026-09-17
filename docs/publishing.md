@@ -1,4 +1,4 @@
-# Publishing wana 0.5.0
+# Publishing wana
 
 Packaging follows Wyra: Hatchling, a dynamic version in `wana/__init__.py`, a
 console script, a tested wheel/sdist artifact, and Trusted Publishing on pushes to `main` (or published GitHub Releases). Creating files locally does not reserve the package name or publish it.
@@ -30,7 +30,7 @@ and [attestation documentation](https://docs.pypi.org/attestations/producing-att
 
 1. Review the changes; run the development checks from README.
 2. For new package contents, increment `__version__` in `wana/__init__.py` and
-   update the changelog. This checkout prepares `0.5.0`; `0.1.0` is already published.
+   update the changelog. Python `0.5.0` is published; this checkout prepares `0.5.1`.
 3. Commit and push to `main`. No tag or GitHub Release is required.
 4. Wait for all CI platforms to pass. Local validation alone does not verify that matrix.
 5. The workflow tests, builds, checks metadata, smoke-tests the wheel and uploads
@@ -48,8 +48,10 @@ before retrying. If the GitHub environment restricts deployment branches, allow
 `main` for this push-based flow. Do not overwrite an existing PyPI version.
 
 The Node package is independent. See [node/README.md](../node/README.md) for
-`@sauloleite/wana` and the manual `npm.yml` workflow. The local npm client is
-currently unauthenticated, so no npm upload has been made.
+`@sauloleite/wana` and the manual `npm.yml` workflow. Version 0.5.0 was published using the authenticated npm account and verified
+with `npm exec --package=@sauloleite/wana@0.5.0 -- wana --version`. The first
+publication used interactive authentication. Configure an npm Trusted Publisher
+for `npm.yml` / environment `npm-publish` before using the OIDC workflow.
 
 ## Exact phase-zero compatibility version
 
@@ -62,6 +64,7 @@ features and bundled model weights belong to 0.5.0.
 
 The workflow installs the exact 0.0.1 wheel and verifies `wana --version` before
 uploading through the same configured Trusted Publisher. The bootstrap wheel was
-also built and installed in a clean local environment. After the workflow exists
+also built locally, published successfully, and installed directly from PyPI in
+a fresh environment. [Successful bootstrap run](https://github.com/sauloleite/wana/actions/runs/35279451259). After the workflow exists
 on `main`, run `gh workflow run cicd.yml -f bootstrap=true`. Verify the registry
 installation afterwards with `pip install wana==0.0.1` in a fresh environment.

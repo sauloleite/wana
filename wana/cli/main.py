@@ -16,7 +16,7 @@ from wana.adapters.matching.ngram import NgramMatcher
 from wana.adapters.report.json import serialize
 from wana.adapters.report.terminal import render
 from wana.application.build_manifest import build_manifest
-from wana.application.check_contamination import check_examples
+from wana.application.check_contamination import check_replayed
 from wana.domain.contamination import Level
 from wana.domain.manifest import Digest, Step
 
@@ -89,11 +89,8 @@ def main(argv: Sequence[str] | None = None) -> int:
                 ),
             )
         reader = JsonlReader()
-        training = [tuple(reader.read(str(path))) for path in args.train]
         testing = [tuple(reader.read(str(path))) for path in args.evaluation]
-        inputs = tuple(
-            digest(path, len(rows)) for path, rows in zip(args.train, training, strict=True)
-        )
+        inputs = tuple(digest(path, sum(1 for _ in reader.read(str(path)))) for path in args.train)
         eval_sets = tuple(
             digest(path, len(rows)) for path, rows in zip(args.evaluation, testing, strict=True)
         )
@@ -115,8 +112,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             raise ValueError(
                 "output would overwrite an input or parent manifest; choose another -o"
             )
-        report = check_examples(
-            (e for rows in training for e in rows),
+        report = check_replayed(
+            lambda: (e for path in args.train for e in reader.read(str(path))),
             (e for rows in testing for e in rows),
             matchers=matchers,
             fail_on=tuple(Level(level) for level in args.fail_on),

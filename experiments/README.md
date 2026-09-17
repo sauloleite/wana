@@ -85,3 +85,19 @@ are distinct from normal pip installation, which already includes default weight
 
 The plot is reproducible with `python experiments/plot_ifd.py experiments/results/alpaca-1k`
 after installing matplotlib. It visualizes the scoring result, not downstream performance.
+
+## Corrected retention-budget study
+
+The [new protocol and results](results/retention-curve/README.md) add EOS targets,
+a fresh evaluation split, six retention budgets and the paper's rule for combining
+answer orders. It retains the earlier pilot and its null result. Reproduce with:
+
+```sh
+python experiments/retention_curve.py
+python experiments/report_retention_curve.py
+```
+
+A separate [scorer audit](results/scorer-audit.json), reproducible with
+`python experiments/audit_scorer.py`, compares the GGUF and Transformers rankings
+on 20 fixed training examples. Their Spearman correlation is 0.97744. This checks
+adapter/quantization consistency on that sample, not downstream model quality.

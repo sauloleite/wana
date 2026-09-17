@@ -1,12 +1,12 @@
 """Public composition boundary: paths or already-normalized examples."""
 
-from collections.abc import Iterable
+from collections.abc import Iterable, Iterator
 from os import PathLike
 
 from wana.adapters.io.jsonl import JsonlReader
 from wana.adapters.matching.minhash import MinHashMatcher
 from wana.adapters.matching.ngram import NgramMatcher
-from wana.application.check_contamination import check_examples
+from wana.application.check_contamination import check_examples, check_replayed
 from wana.domain.contamination import Level, Report
 from wana.domain.example import Example
 from wana.domain.score import ScoredExample, ScoreResult
@@ -31,6 +31,13 @@ def check_contamination(
 ) -> Report:
     """Check train against evaluation sets; no model, network or file writes."""
     selected = (NgramMatcher(), MinHashMatcher()) if matchers is None else matchers
+    if isinstance(train, (str, PathLike)):
+        return check_replayed(
+            lambda: load(train),
+            (example for source in eval_sets for example in load(source)),
+            matchers=selected,
+            fail_on=fail_on,
+        )
     return check_examples(
         load(train),
         (example for source in eval_sets for example in load(source)),
@@ -39,15 +46,22 @@ def check_contamination(
     )
 
 
-def score_dataset(source: Dataset, *, scorers: Iterable["Scorer"] | None = None) -> "ScoreResult":
-    """Score a path or loaded examples, using the pip-installed model by default."""
+def iter_scored(
+    source: Dataset, *, scorers: Iterable[Scorer] | None = None
+) -> Iterator[ScoredExample]:
+    """Yield scored records lazily; retain IDs for duplicate detection, not record bodies."""
     from wana.adapters.logprob.bundled import BundledLogProbProvider
     from wana.adapters.scoring.ifd import IFDScorer
     from wana.adapters.scoring.length import LengthScorer
-    from wana.application.score_dataset import score_examples
+    from wana.application.score_dataset import iter_scores
 
     chosen = (LengthScorer(), IFDScorer(BundledLogProbProvider())) if scorers is None else scorers
-    return score_examples(load(source), chosen)
+    yield from iter_scores(load(source), chosen)
+
+
+def score_dataset(source: Dataset, *, scorers: Iterable[Scorer] | None = None) -> ScoreResult:
+    """Collect scored records; use iter_scored for incremental processing."""
+    return ScoreResult(tuple(iter_scored(source, scorers=scorers)))
 
 
 def select_subset(

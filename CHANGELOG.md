@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.5.1
+
+- Stream the score CLI and expose `iter_scored`; preserve existing JSONL output
+  if a later record fails to score or serialize.
+- Reuse identical verified standalone selections; `--reselect` explicitly applies
+  the fractional budget again. File-based checks replay training without retaining
+  all training record bodies.
+- Record the running package version in scorer/cache identity.
+- Add weekly tests against current Transformers and ONNX dependencies.
+- Preserve and report the corrected Alpaca-1k protocol, individual judgments,
+  scorer consistency audit and observed negative primary comparison.
+- Update publication evidence for PyPI and npm.
+
+
 ## 0.5.0 — Unreleased
 
 - Install SmolLM2-135M-Instruct Q4_1 weights through the default pip dependency,

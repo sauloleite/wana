@@ -48,6 +48,10 @@ def test_clustered_summary_handles_correlated_seeds_and_rejects_mixed_comparison
         module.aggregate(rows[:-1])
     with pytest.raises(ValueError):
         module.aggregate(rows + rows)
+    rows[0]["order_policy"] = "paper"
+    with pytest.raises(ValueError):
+        module.aggregate(rows)
+    rows[0].pop("order_policy")
     rows[0]["baseline"] = "full"
     with pytest.raises(ValueError):
         module.aggregate(rows)

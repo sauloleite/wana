@@ -5,13 +5,16 @@ import hashlib
 import importlib.metadata
 import json
 import os
+import shutil
 from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 
 from wana.adapters.embedding.hashing import HashingEmbedder
 from wana.adapters.embedding.onnx import OnnxEmbedder
+from wana.adapters.io.jsonl import JsonlReader
 from wana.adapters.io.provenance import digest, explain_manifest, verify_manifest
+from wana.adapters.io.reselection import previous_selection_count
 from wana.adapters.io.scored import write_scored
 from wana.adapters.logprob.bundled import BundledLogProbProvider
 from wana.adapters.logprob.cache import CachedLogProbProvider
@@ -22,7 +25,7 @@ from wana.adapters.scoring.length import LengthScorer
 from wana.adapters.selection.diverse_greedy import DiverseGreedySelector
 from wana.adapters.selection.stratified import StratifiedSelector
 from wana.adapters.selection.topk import TopKSelector
-from wana.api import score_dataset, select_subset
+from wana.api import iter_scored, select_subset
 from wana.ports.embedder import Embedder
 from wana.ports.logprob import LogProbProvider
 from wana.ports.scorer import Scorer
@@ -60,6 +63,12 @@ def add_commands(commands: Any) -> None:
                 "--cache-dir",
                 type=Path,
                 default=Path(os.environ.get("WANA_CACHE_DIR", str(Path.home() / ".cache/wana"))),
+            )
+        if name == "select":
+            parser.add_argument(
+                "--reselect",
+                action="store_true",
+                help="apply the budget again instead of reusing an identical verified selection",
             )
         if name in ("select", "run"):
             parser.add_argument("--keep", type=keep_value, default=0.2)
@@ -104,8 +113,10 @@ def scoring(
         provider = FakeLogProbProvider()
     else:
         provider = TransformersCPU(args.model, revision=args.revision, max_tokens=args.max_tokens)
+    from wana import __version__
+
     info = {
-        "implementation": "wana-0.5.0",
+        "implementation": f"wana-{__version__}",
         "runtime": importlib.metadata.version("llama-cpp-python")
         if args.provider == "bundled"
         else importlib.metadata.version("transformers")
@@ -212,15 +223,39 @@ def execute(args: argparse.Namespace) -> int:
     if args.command == "score":
         scorers, info, cache = scoring(args)
         try:
-            result_score = score_dataset(source, scorers=scorers)
+            count = write_scored(output, iter_scored(source, scorers=scorers))
         finally:
             if cache:
                 cache.close()
-        write_scored(output, result_score.examples)
         steps = ({"name": "score", **info},)
-        count = len(result_score.examples)
         outputs: tuple[tuple[Path, int | None], ...] = ((output, count),)
     else:
+        from wana import __version__
+
+        params = selection_parameters(args)
+        previous_count = (
+            None
+            if args.reselect
+            else previous_selection_count(source, parent_path, params, __version__)
+        )
+        if previous_count is not None:
+            output.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, output)
+            decisions = [
+                {key: row.original["wana"][key] for key in ("example_id", "decision", "reason")}
+                for row in JsonlReader().read(str(source))
+            ]
+            decisions_path.write_text(
+                json.dumps(decisions, sort_keys=True, indent=2) + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
+            steps = ({"name": "select", **params, "out": previous_count, "reused": True},)
+            record_manifest(
+                (source,), (), ((output, previous_count),), steps, manifest_path, parent_path
+            )
+            print(f"reused {previous_count} selected records in {output}")
+            return 0
         selected = select_subset(source, keep=args.keep, selector=selecting(args))
         write_scored(output, selected.examples, selected.decisions)
         decisions_path.write_text(

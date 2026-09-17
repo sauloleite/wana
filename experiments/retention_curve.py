@@ -11,6 +11,7 @@ from wana import check_contamination, select_subset
 from wana.adapters.embedding.hashing import HashingEmbedder
 from wana.adapters.io.jsonl import JsonlReader, parse_record
 from wana.adapters.io.scored import from_example, write_scored
+from wana.adapters.report.json import serialize
 from wana.adapters.selection.diverse_greedy import DiverseGreedySelector
 
 ROOT = Path("experiments/results/retention-curve")
@@ -47,6 +48,7 @@ def prepare() -> dict[str, object]:
     report = check_contamination([r.example for r in rows], eval_sets=[evaluation])
     if not report.ok:
         raise ValueError("new evaluation overlaps training; investigate before running")
+    (ROOT / "contamination.json").write_text(serialize(report))
     evaluation_path = DATA / "evaluation.jsonl"
     evaluation_path.write_text("".join(json.dumps(e.original) + "\n" for e in evaluation))
     for seed in (42, 43, 44):

@@ -302,3 +302,65 @@ def test_semantic_failure_policy_requires_detector(tmp_path, capsys):
     source = dataset(tmp_path / "train.jsonl")
     assert main(["check", str(source), "--eval", str(source), "--fail-on", "SEMANTIC"]) == 2
     assert "requires --semantic" in capsys.readouterr().err
+
+
+def test_streaming_scores_are_lazy_and_match_collected_results():
+    from wana import iter_scored
+
+    consumed = []
+
+    def source():
+        for i in range(3):
+            consumed.append(i)
+            yield example(i)
+
+    stream = iter_scored(source(), scorers=[LengthScorer()])
+    assert consumed == []
+    first = next(stream)
+    assert consumed == [0]
+    assert (first, *stream) == score_dataset(
+        [example(i) for i in range(3)], scorers=[LengthScorer()]
+    ).examples
+
+
+def test_scored_write_preserves_existing_file_on_late_failure(tmp_path):
+    target = tmp_path / "scored.jsonl"
+    target.write_text("previous result\n")
+
+    def broken():
+        yield row(0, 0.5)
+        raise ValueError("late scoring failure")
+
+    with pytest.raises(ValueError, match="late scoring failure"):
+        write_scored(target, broken())
+    assert target.read_text() == "previous result\n"
+    assert list(tmp_path.iterdir()) == [target]
+    assert write_scored(target, [row(0, 0.5)]) == 1
+    assert json.loads(target.read_text())["wana"]["scores"]["ifd"] == 0.5
+
+
+def test_fractional_cli_retry_reuses_verified_bytes_and_allows_reselection(tmp_path):
+    source = dataset(tmp_path / "train.jsonl")
+    scored = tmp_path / "scored.jsonl"
+    assert main(["score", str(source), "-o", str(scored), "--provider", "fake"]) == 0
+    selected = tmp_path / "first.jsonl"
+    assert main(["select", str(scored), "-o", str(selected), "--keep", ".2"]) == 0
+    assert len(selected.read_text().splitlines()) == 2
+    repeated = tmp_path / "second.jsonl"
+    assert main(["select", str(selected), "-o", str(repeated), "--keep", ".2"]) == 0
+    assert repeated.read_bytes() == selected.read_bytes()
+    manifest = tmp_path / "second.manifest.json"
+    assert verify_manifest(manifest).ok
+    assert json.loads(manifest.read_text())["steps"][0]["reused"] is True
+    third = tmp_path / "third.jsonl"
+    assert main(["select", str(repeated), "-o", str(third), "--keep", ".2"]) == 0
+    assert third.read_bytes() == selected.read_bytes()
+    smaller = tmp_path / "smaller.jsonl"
+    assert main(["select", str(selected), "-o", str(smaller), "--keep", ".2", "--reselect"]) == 0
+    assert smaller.read_bytes() == b""
+    changed = tmp_path / "changed.jsonl"
+    assert main(["select", str(selected), "-o", str(changed), "--keep", ".5"]) == 0
+    assert len(changed.read_text().splitlines()) == 1
+    selected.write_text(selected.read_text() + "\n")
+    assert main(["select", str(selected), "-o", str(repeated), "--keep", ".2"]) == 2
+    assert repeated.read_bytes() == third.read_bytes()

@@ -36,11 +36,15 @@ jobs:
   node:
     if: ${{ !inputs.bootstrap }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ['20', '22', '24']
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v6
         with:
-          node-version: '24'
+          node-version: ${{ matrix.node-version }}
       - run: npm ci --ignore-scripts
         working-directory: node
       - run: npm test

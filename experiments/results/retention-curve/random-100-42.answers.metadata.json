@@ -1,0 +1,8 @@
+{
+  "checkpoint": "experiments/checkpoints/retention-curve/random-100-42",
+  "dataset_sha256": "6d6df7a739a945eaaa63e5732a28ce54717ccc6c7fb9718210a2f08f69bc79ba",
+  "predictions_sha256": "cea002c3aa074c68bcbcaba78c4041a09e750f518444a8335e4bb85722efff65",
+  "max_new_tokens": 128,
+  "do_sample": false,
+  "elapsed_seconds": 82.91825829200002
+}

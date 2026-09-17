@@ -273,7 +273,9 @@ def test_different_hash_seeds():
 
 
 def test_module_version():
+    from wana import __version__
+
     assert (
         subprocess.check_output([sys.executable, "-m", "wana", "--version"]).strip()
-        == b"wana 0.5.0"
+        == f"wana {__version__}".encode()
     )

@@ -1,0 +1,10 @@
+{
+  "eval_records": 100,
+  "fail_on": [
+    "EXACT",
+    "NEAR"
+  ],
+  "hits": [],
+  "ok": true,
+  "train_records": 1000
+}

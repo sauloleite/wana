@@ -53,6 +53,12 @@ include = [
   "experiments/results/benchmark/*.json", "experiments/results/benchmark/*.judgments.jsonl",
   "experiments/results/benchmark/README.md", "experiments/results/benchmark/comparisons.png",
   "experiments/results/benchmark/comparisons.svg",
+  "experiments/results/scorer-audit.json",
+  "experiments/results/retention-curve/*.json",
+  "experiments/results/retention-curve/*.judgments.jsonl",
+  "experiments/results/retention-curve/README.md",
+  "experiments/results/retention-curve/curve.png",
+  "experiments/results/retention-curve/curve.svg",
 ]
 
 [tool.ruff]

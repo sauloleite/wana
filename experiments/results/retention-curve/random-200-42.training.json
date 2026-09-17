@@ -1,0 +1,16 @@
+{
+  "dataset_sha256": "658d022bfe2540b6ee94aee9e71cb73703412bb485997dbb49d81598fec70503",
+  "epochs": 1,
+  "seed": 42,
+  "learning_rate": 2e-05,
+  "max_tokens": 2048,
+  "target_eos": true,
+  "model": "experiments/models/smollm2",
+  "mean_training_loss": 1.8338201686739921,
+  "updates": 200,
+  "gradient_clip": 1.0,
+  "device": "mps",
+  "elapsed_seconds": 57.70890525000141,
+  "torch_version": "2.14.0",
+  "transformers_version": "5.17.0"
+}

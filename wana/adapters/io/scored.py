@@ -2,6 +2,8 @@
 
 import copy
 import json
+import os
+import tempfile
 from collections.abc import Iterable
 from dataclasses import asdict
 from pathlib import Path
@@ -28,24 +30,37 @@ def from_example(example: Example) -> ScoredExample:
 
 def write_scored(
     path: Path, examples: Iterable[ScoredExample], decisions: Iterable[Decision] = ()
-) -> None:
+) -> int:
+    """Atomically replace the destination only after every record is written."""
     lookup = {d.example_id: d for d in decisions}
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8", newline="\n") as stream:
-        for row in examples:
-            record = copy.deepcopy(row.example.original) or {
-                "messages": [
-                    {"role": m.role.value, "content": m.content} for m in row.example.messages
-                ]
-            }
-            annotation = {
-                "id": row.example.id,
-                "scores": {s.name: s.value for s in row.scores},
-                "flags": sorted({flag for s in row.scores for flag in s.flags}),
-            }
-            if row.example.id in lookup:
-                annotation.update(asdict(lookup[row.example.id]))
-            record["wana"] = annotation
-            stream.write(
-                json.dumps(record, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n"
-            )
+    temporary = None
+    count = 0
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", newline="\n", dir=path.parent, delete=False
+        ) as stream:
+            temporary = Path(stream.name)
+            for row in examples:
+                record = copy.deepcopy(row.example.original) or {
+                    "messages": [
+                        {"role": m.role.value, "content": m.content} for m in row.example.messages
+                    ]
+                }
+                annotation = {
+                    "id": row.example.id,
+                    "scores": {s.name: s.value for s in row.scores},
+                    "flags": sorted({flag for s in row.scores for flag in s.flags}),
+                }
+                if row.example.id in lookup:
+                    annotation.update(asdict(lookup[row.example.id]))
+                record["wana"] = annotation
+                stream.write(
+                    json.dumps(record, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n"
+                )
+                count += 1
+        os.replace(temporary, path)
+        return count
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)

@@ -1,0 +1,107 @@
+{
+  "sample_seed": 17,
+  "records": [
+    {
+      "id": 1682,
+      "gguf_ifd": 0.8739032764102393,
+      "transformers_ifd": 0.8417128284979084
+    },
+    {
+      "id": 6120,
+      "gguf_ifd": 0.08086960162935841,
+      "transformers_ifd": 0.08170000745345395
+    },
+    {
+      "id": 10016,
+      "gguf_ifd": 0.18582921287769166,
+      "transformers_ifd": 0.16367334917423595
+    },
+    {
+      "id": 14110,
+      "gguf_ifd": 0.6625950775586997,
+      "transformers_ifd": 0.6400555261329706
+    },
+    {
+      "id": 15414,
+      "gguf_ifd": 0.6580840717456949,
+      "transformers_ifd": 0.6331161949422899
+    },
+    {
+      "id": 15925,
+      "gguf_ifd": 0.14071811945800902,
+      "transformers_ifd": 0.14742888453863276
+    },
+    {
+      "id": 16263,
+      "gguf_ifd": 0.5622759938196615,
+      "transformers_ifd": 0.5504595599900701
+    },
+    {
+      "id": 19283,
+      "gguf_ifd": 0.7247314321828562,
+      "transformers_ifd": 0.7483882823630741
+    },
+    {
+      "id": 20343,
+      "gguf_ifd": 0.7185478145103417,
+      "transformers_ifd": 0.6822036682908222
+    },
+    {
+      "id": 21966,
+      "gguf_ifd": 0.7854132933953744,
+      "transformers_ifd": 0.8159265488183317
+    },
+    {
+      "id": 27966,
+      "gguf_ifd": 0.5064690813436378,
+      "transformers_ifd": 0.48016279810252566
+    },
+    {
+      "id": 28827,
+      "gguf_ifd": 0.84517176190436,
+      "transformers_ifd": 0.8380588028908634
+    },
+    {
+      "id": 35533,
+      "gguf_ifd": 0.8513844376344969,
+      "transformers_ifd": 0.9512360035522875
+    },
+    {
+      "id": 37762,
+      "gguf_ifd": 0.8388008085579517,
+      "transformers_ifd": 0.86921292210291
+    },
+    {
+      "id": 37787,
+      "gguf_ifd": 0.6473494730309881,
+      "transformers_ifd": 0.5740861706055124
+    },
+    {
+      "id": 41272,
+      "gguf_ifd": 0.43924641031305545,
+      "transformers_ifd": 0.4319015266888797
+    },
+    {
+      "id": 43506,
+      "gguf_ifd": 0.9131128912182281,
+      "transformers_ifd": 0.9041640569548924
+    },
+    {
+      "id": 43790,
+      "gguf_ifd": 0.8373982061431839,
+      "transformers_ifd": 0.8468820492935162
+    },
+    {
+      "id": 48956,
+      "gguf_ifd": 0.6201934585827822,
+      "transformers_ifd": 0.5937385320668882
+    },
+    {
+      "id": 50965,
+      "gguf_ifd": 0.17725446661777522,
+      "transformers_ifd": 0.16633957230450624
+    }
+  ],
+  "spearman": 0.9774436090225563,
+  "scope": "Adapter/quantization consistency audit on training records; not downstream quality."
+}
