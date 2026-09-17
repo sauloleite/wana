@@ -1,0 +1,23 @@
+{
+  "baseline": "full",
+  "order_policy": "paper",
+  "prompts": 100,
+  "seeds": [
+    42
+  ],
+  "judgments": 100,
+  "counts": {
+    "selected": 23,
+    "baseline": 13,
+    "tie": 64
+  },
+  "position_disagreements": 35,
+  "preference_score_ties_half": 0.55,
+  "prompt_cluster_bootstrap_95": [
+    0.49,
+    0.605
+  ],
+  "bootstrap_samples": 10000,
+  "criterion_met": false,
+  "scope": "Local small-model pilot; single quantized model judge, not human ground truth"
+}
